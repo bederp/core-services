@@ -1,0 +1,9 @@
+<requests>
+    <request>
+        <clientId>1</clientId>
+        <requestId>1</requestId>
+        <name>Bułka</name>
+        <quantity>1</quantity>
+        <price>10.00</price>
+    </request>
+</requests>

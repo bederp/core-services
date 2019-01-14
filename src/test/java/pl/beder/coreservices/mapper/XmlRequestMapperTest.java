@@ -10,13 +10,13 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.util.ResourceUtils.getFile;
 
-public class CsvRequestMapperTest {
+public class XmlRequestMapperTest {
 
   @Test
   public void shouldReadSingleObjectFromFile() throws IOException {
-    File file = getFile("classpath:singleObject.csv");
-    CsvRequestMapper csvRequestMapper = new CsvRequestMapper();
-    List<Request> requests = csvRequestMapper.toObjs(file);
+    File file = getFile("classpath:singleObject.xml");
+    XmlRequestMapper xmlRequestMapper = new XmlRequestMapper();
+    List<Request> requests = xmlRequestMapper.toObjs(file);
 
     assertThat(requests).hasSize(1);
     assertThat(requests.get(0)).isEqualTo(expectedRequest());
@@ -24,9 +24,9 @@ public class CsvRequestMapperTest {
 
   @Test
   public void shouldReadMultipleObjectFromFile() throws IOException {
-    File file = getFile("classpath:multipleObjects.csv");
-    CsvRequestMapper csvRequestMapper = new CsvRequestMapper();
-    List<Request> requests = csvRequestMapper.toObjs(file);
+    File file = getFile("classpath:multipleObjects.xml");
+    XmlRequestMapper xmlRequestMapper = new XmlRequestMapper();
+    List<Request> requests = xmlRequestMapper.toObjs(file);
 
     assertThat(requests).hasSize(4);
   }

@@ -1,14 +1,13 @@
-package pl.beder.coreservices.mapper;
+package pl.beder.coreservices.mappers;
 
-import org.junit.Test;
-import pl.beder.coreservices.domain.Request;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.util.ResourceUtils.getFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.util.ResourceUtils.getFile;
+import org.junit.Test;
+import pl.beder.coreservices.domain.Request;
 
 public class XmlRequestMapperTest {
 

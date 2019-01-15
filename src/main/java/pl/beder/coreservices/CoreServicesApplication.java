@@ -44,11 +44,8 @@ public class CoreServicesApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    CsvRequestMapper csvRequestMapper = csvRequestMapper();
-    XmlRequestMapper xmlRequestMapper = xmlRequestMapper();
-
-    List<Request> requests = csvRequestMapper.toObjs(getFile("classpath:input.csv"));
-    List<Request> xmlRequests = xmlRequestMapper.toObjs(getFile("classpath:input.xml"));
+    List<Request> requests = csvRequestMapper().toObjs(getFile("classpath:input.csv"));
+    List<Request> xmlRequests = xmlRequestMapper().toObjs(getFile("classpath:input.xml"));
 
     requests.addAll(xmlRequests);
 

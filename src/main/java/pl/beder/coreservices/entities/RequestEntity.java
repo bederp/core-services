@@ -12,21 +12,23 @@ import pl.beder.coreservices.domain.Request;
 public class RequestEntity {
   @Id @GeneratedValue long id;
 
-  @Column(length = 6)
+  @Column(length = 6, nullable = false)
   private String clientId;
 
-  private long requestId;
+  @Column(nullable = false)
   private String name;
-  private int quantity;
+
   private double price;
+  private int quantity;
+  private long requestId;
 
   public static RequestEntity fromDomain(Request domainObject) {
     return builder()
         .clientId(domainObject.getClientId())
-        .requestId(domainObject.getRequestId())
         .name(domainObject.getName())
-        .quantity(domainObject.getQuantity())
         .price(domainObject.getPrice())
+        .quantity(domainObject.getQuantity())
+        .requestId(domainObject.getRequestId())
         .build();
   }
 }

@@ -7,6 +7,9 @@ import javax.persistence.Id;
 import lombok.Builder;
 import pl.beder.coreservices.domain.Request;
 
+/**
+ * Object representing Database mapping for {@link Request} domain object.
+ */
 @Builder
 @Entity(name = "REQUEST")
 public class RequestEntity {
@@ -22,6 +25,13 @@ public class RequestEntity {
   private int quantity;
   private long requestId;
 
+  /**
+   * This method transforms domain object Request into entity representation. I've decided to
+   * separate DB concerns from plain entities, hence the cost of mapping but also more clean domain.
+   *
+   * @param domainObject {@link Request} object to be mapped
+   * @return {@link RequestEntity} representing {@link Request} domain object
+   */
   public static RequestEntity fromDomain(Request domainObject) {
     return builder()
         .clientId(domainObject.getClientId())

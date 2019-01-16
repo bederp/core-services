@@ -12,7 +12,7 @@ import pl.beder.coreservices.domain.Request;
 import pl.beder.coreservices.loader.DbLoader;
 import pl.beder.coreservices.mappers.CsvRequestMapper;
 import pl.beder.coreservices.mappers.XmlRequestMapper;
-import pl.beder.coreservices.repositories.RequestEntityRepository;
+import pl.beder.coreservices.repositories.RequestRepository;
 
 @SpringBootApplication
 public class CoreServicesApplication implements CommandLineRunner {
@@ -38,7 +38,7 @@ public class CoreServicesApplication implements CommandLineRunner {
   }
 
   @Bean
-  public DbLoader dbLoader(RequestEntityRepository repository) {
+  public DbLoader dbLoader(RequestRepository repository) {
     return new DbLoader(repository);
   }
 

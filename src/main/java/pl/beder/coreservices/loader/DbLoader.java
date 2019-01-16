@@ -5,16 +5,16 @@ import static java.util.stream.Collectors.toList;
 import java.util.List;
 import pl.beder.coreservices.domain.Request;
 import pl.beder.coreservices.entities.RequestEntity;
-import pl.beder.coreservices.repositories.RequestEntityRepository;
+import pl.beder.coreservices.repositories.RequestRepository;
 
 /**
  * This class is used to load {@link Request} objects into Database.
  */
 public class DbLoader {
 
-  private RequestEntityRepository repository;
+  private RequestRepository repository;
 
-  public DbLoader(RequestEntityRepository repository) {
+  public DbLoader(RequestRepository repository) {
     this.repository = repository;
   }
 

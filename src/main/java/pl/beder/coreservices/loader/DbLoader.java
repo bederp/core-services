@@ -9,7 +9,7 @@ import pl.beder.coreservices.repositories.RequestRepository;
 
 /**
  * This class is used to load {@link Request} objects into Database.
- */
+*/
 public class DbLoader {
 
   private RequestRepository repository;
@@ -17,9 +17,10 @@ public class DbLoader {
   public DbLoader(RequestRepository repository) {
     this.repository = repository;
   }
-
   /**
-   * Maps {@link Request} to {@link RequestEntity} and then persists in them in database.
+   * Loads "input.csv" and Maps {@link Request} to {@link RequestEntity} and then persists in them
+   * in database.
+   *
    * @param requests objects to be persisted into database
    */
   public void load(List<Request> requests) {
